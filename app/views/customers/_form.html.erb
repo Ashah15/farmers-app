@@ -1,0 +1,28 @@
+<%= simple_form_for @customer do |f| %>
+  <% if @customer.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= "#{pluralize(@customer.errors.count, "error")} prohibited this post from being saved:" %>
+      </h2>
+      <ul>
+        <% @customer.errors.full_messages.each do |msg| %>
+          <li>
+            <%= msg %>
+          </li>
+          <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.input :name, class: "form-control" %><br>
+  </div>
+
+  <div class="form-group">
+    <%= f.input :phonenumber, class: "form-control" %><br>
+  </div>
+
+  <div class="form-group">
+    <%= f.button :submit %>
+  </div>
+<% end %>
